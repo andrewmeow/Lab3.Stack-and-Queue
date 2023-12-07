@@ -3,13 +3,19 @@ cmake_minimum_required(VERSION 2.8) #Проверка версии CMake.
 set(PROJECT_NAME All_labs) #Создаем обычную локальную переменную с именем проекта
 project(${PROJECT_NAME}) # Название проекта
 
+SET(CMAKE_C_COMPILER "gcc.exe")
+SET(CMAKE_CXX_COMPILER "gcc.exe")
+
 set(stack stack) #Переменная с именем приложения
-set(stacklib stacklib) #Переменная с именем библиотеки
+set(stacklib stacklib) #Переменная с именем 
 set(stacktest stacktest)
 
+set(expressionlib expressionlib)
+set(expressiontest expressiontest)
+set(expression expression)
 
-set(queue queue) #Переменная с именем приложения
-set(queuelib queuelib) #Переменная с именем библиотеки
+set(queue queue) 
+set(queuelib queuelib)  
 set(queuetest queuetest)
 
 set(CMAKE_CONFIGURATION_TYPES "Debug;Release" CACHE STRING "Configs" FORCE) #Создается переменная CMAKE_CONFIGURATION_TYPES со значением "Debug;Release" и меткой/разделом Configs, переменная сохраниется в специальном файле доступном из всех файлов,
@@ -30,14 +36,8 @@ add_subdirectory(queue) #Добавляем директорию с под-CMake
 add_subdirectory(queuelib)
 add_subdirectory(queuetest)
 
+add_subdirectory(expression)
+add_subdirectory(expressionlib)
+add_subdirectory(expressiontest)
 
 
-#file(GLOB hdrs "*.h*") #Добавляем в переменную hdrs все файлы с расширением .h
-#file(GLOB srcs "*.cpp") #Добавляем в переменную srcs все файлы с расширением .cpp
-
-#include_directories(lib1)
-#add_executable(${PROJECT_NAME} ${srcs} ${hdrs}) #Создаем проект с именем из переменной ${PROJECT_NAME}, в него добавляются файлы из переменных ${srcs} и ${hdrs}
-
-
- #Собираем проект в поддиректории lib1
-#target_link_libraries(${PROJECT_NAME} ${MyLib1}) #Подключаем к проекту с именем ${PROJECT_NAME} библиотеку с именем ${MyLib1}

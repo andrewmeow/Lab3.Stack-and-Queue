@@ -9,6 +9,7 @@ int main()
     cout << "*Создание очереди*\nВведите размер: ";
     cin >> size;
     TQueue<int> Queue(size);
+
     while (num != 5)
     {
         cout << "\n1. Добавить элемент в очередь\n";

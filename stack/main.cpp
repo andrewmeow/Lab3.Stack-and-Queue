@@ -6,7 +6,6 @@ int main()
 {
     setlocale(LC_ALL, "Russian");
     int num = 0, el, size;
-
     cout << "*Создание стека*\nВведите размер: ";
     cin >> size;
     TStack<int> stack(size);
